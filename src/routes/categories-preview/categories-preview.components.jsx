@@ -19,3 +19,5 @@ const CategoriesPreview = () => {
 };
 
 export default CategoriesPreview;
+
+/* without build package*/
