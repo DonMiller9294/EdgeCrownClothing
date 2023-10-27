@@ -1,6 +1,4 @@
-import { Link } from "react-router-dom";
-
-import ProductCard from "../product-card/product-card.component";
+import ProductCard from "../product-card/product-card.component.jsx";
 
 import "./category-preview.styles.scss";
 
