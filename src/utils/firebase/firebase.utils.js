@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 import { initializeApp } from "firebase/app";
 import {
 	getAuth,
@@ -13,11 +15,11 @@ import {
 	getFirestore,
 	doc,
 	getDoc,
-	getDocs,
 	setDoc,
 	collection,
 	writeBatch,
 	query,
+	getDocs,
 } from "firebase/firestore";
 
 const firebaseConfig = {
@@ -28,7 +30,8 @@ const firebaseConfig = {
 	messagingSenderId: "156582145387",
 	appId: "1:156582145387:web:ab743d01bc3a790c98302e",
 };
-const firebaseApp = initializeApp(firebaseConfig);
+
+const firebaseapp = initializeApp(firebaseConfig);
 
 const googleProvider = new GoogleAuthProvider();
 
@@ -46,10 +49,11 @@ export const db = getFirestore();
 
 export const addCollectionAndDocuments = async (
 	collectionKey,
-	objectsToAdd
+	objectsToAdd,
+	field
 ) => {
-	const batch = writeBatch(db);
 	const collectionRef = collection(db, collectionKey);
+	const batch = writeBatch(db);
 
 	objectsToAdd.forEach((object) => {
 		const docRef = doc(collectionRef, object.title.toLowerCase());
